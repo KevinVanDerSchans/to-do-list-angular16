@@ -2,7 +2,7 @@
   <div class="top">
     <p *ngIf="todo.createdAt">{{ todo.createdAt | dateFormat }}</p>
 
-    <button (click)="{}">
+    <button (click)="(removeTodo())">
       <img src="assets/cross.svg" alt="cross">
     </button>
   </div>
