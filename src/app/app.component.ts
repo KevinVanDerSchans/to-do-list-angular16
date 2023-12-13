@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Todo } from './interfaces/todos.interfaces';
+import { TodosService } from './services/todos.service';
 
 @Component({
   selector: 'app-root',
@@ -7,26 +8,9 @@ import { Todo } from './interfaces/todos.interfaces';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'To-do List';
+  private todosServices = inject(TodosService);
 
-  todos: Todo[] = [
-    {
-      id: 1,
-      description: 'Tarea 1',
-      createdAt: new Date(),
-      status: 'empty',
-    },
-    {
-      id: 2,
-      description: 'Tarea 2',
-      createdAt: new Date(),
-      status: 'empty',
-    },
-    {
-      id: 3,
-      description: 'Tarea 3',
-      createdAt: new Date(),
-      status: 'empty',
-    }
-  ];
+  get todos() {
+    return this.todosServices.getTodos();
+  }
 }
