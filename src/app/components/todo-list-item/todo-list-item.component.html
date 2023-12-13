@@ -11,6 +11,13 @@
     <span>
       {{ todo.description }}
     </span>
+
+    <app-dropdown
+      [options]="statusOptions"
+      [optionSelected]="optionSelected"
+      (onSelect)="({})"
+
+    ></app-dropdown>
   </div>
 
 </div>

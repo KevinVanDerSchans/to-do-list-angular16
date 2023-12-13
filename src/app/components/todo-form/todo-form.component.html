@@ -15,6 +15,11 @@
   <div class="form-group">
     <label for="description">Estado:</label>
 
+    <app-dropdown
+      [options]="statusOptions"
+      [optionSelected]="newTodoStatus"
+      onselect="changeStatus($event)"
+    ></app-dropdown>
   </div>
 
   <button type="submit">Añadir tarea</button>

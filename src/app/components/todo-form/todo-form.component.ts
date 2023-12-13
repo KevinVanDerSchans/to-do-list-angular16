@@ -16,17 +16,21 @@ export class TodoFormComponent {
   public statusOptions = formOptions;
 
   public addTodo() {
-    const newTodo: Todo =
-      {
-        id: Math.random(),
-        description: this.newTodoDescription,
-        status: this.newTodoStatus.value,
-        createdAt: new Date(),
-      }
+  const newTodo: Todo =
+    {
+      id: Math.random(),
+      description: this.newTodoDescription,
+      status: this.newTodoStatus.value,
+      createdAt: new Date(),
+    }
 
-      this.todosService.addTodo(newTodo);
+    this.todosService.addTodo(newTodo);
 
-      this.newTodoDescription = '';
-      this.newTodoStatus = formOptions[0];
-   }
+    this.newTodoDescription = '';
+    this.newTodoStatus = formOptions[0];
+  }
+
+  public changeStatus(newStatus: { value: TodoStatus, name: string }) {
+    this.newTodoStatus = newStatus;
+  }
 }
