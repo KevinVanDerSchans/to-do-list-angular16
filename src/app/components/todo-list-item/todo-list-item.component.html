@@ -8,14 +8,18 @@
   </div>
 
   <div class="bottom">
-    <span>
+    <span
+      [ngStyle]="{
+        'text-decoration': todo.status === 'finished' ? 'line-through' : 'none'
+      }"
+    >
       {{ todo.description }}
     </span>
 
     <app-dropdown
       [options]="statusOptions"
       [optionSelected]="optionSelected"
-      (onSelect)="({})"
+      (onSelect)="(changeStatus($event))"
 
     ></app-dropdown>
   </div>

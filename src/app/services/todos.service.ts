@@ -1,41 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Todo } from '../interfaces/todos.interfaces';
+import { FilterStatus, Todo, TodoStatus } from '../interfaces/todos.interfaces';
 import { BehaviorSubject, Observable } from 'rxjs';
-
-const testTask: Todo[] = [
-  {
-    id: 1,
-    description: 'Tarea 1',
-    createdAt: new Date(),
-    status: 'empty',
-  },
-  {
-    id: 2,
-    description: 'Tarea 2',
-    createdAt: new Date(),
-    status: 'empty',
-  },
-  {
-    id: 3,
-    description: 'Tarea 3',
-    createdAt: new Date(),
-    status: 'empty',
-  }
-];
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
 
-  private todos: Todo[] = testTask;
+  private todos: Todo[] = [];
   private todosSubject = new BehaviorSubject<Todo[]>(this.todos);
+  public filterSubject = new BehaviorSubject<FilterStatus>('all')
 
   constructor() {
     this.loadFromLocalStorage();
+    this.setupFiltering();
   }
 
   public getTodos(): Observable<Todo[]> {
+    return this.todosSubject.asObservable();
+  }
+
+  private setupFiltering() {
+    this.filterSubject.subscribe((status) => {
+      const filteredTodos =
+        status === 'all'
+          ? this.todos
+          : this.todos.filter((todo) => todo.status === status);
+      this.todosSubject.next(filteredTodos);
+    });
+  }
+
+  public filterByStatus(status: FilterStatus) {
+    this.filterSubject.next(status);
     return this.todosSubject.asObservable();
   }
 
@@ -46,6 +42,15 @@ export class TodosService {
 
   public removeTodo(todoId: Todo['id']) {
     this.todos = this.todos.filter((todo) => todo.id !== todoId);
+    this.update();
+  }
+
+  public changeTodoStatus(todoId: Todo['id'], newStatus: TodoStatus) {
+    const todoIndex = this.todos.findIndex(todo => todo.id === todoId);
+
+    if (todoIndex === -1) return;
+
+    this.todos[todoIndex].status = newStatus;
     this.update();
   }
 

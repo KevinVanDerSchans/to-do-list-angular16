@@ -8,6 +8,7 @@ import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ArrowComponent } from './components/dropdown/arrow/arrow.component';
+import { TodoFiltersComponent } from './components/todo-filters/todo-filters.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { ArrowComponent } from './components/dropdown/arrow/arrow.component';
     TodoFormComponent,
     DropdownComponent,
     ArrowComponent,
+    TodoFiltersComponent,
   ],
   imports: [
     BrowserModule,

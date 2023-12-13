@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { formOptions } from 'src/app/config/options';
-import { Todo } from 'src/app/interfaces/todos.interfaces';
+import { Todo, TodoStatus } from 'src/app/interfaces/todos.interfaces';
 import { TodosService } from 'src/app/services/todos.service';
 import { traductions } from 'src/app/utils/traductions';
 
@@ -23,5 +23,11 @@ export class TodoListItemComponent {
 
     if(!this.todo) return
     this.todosServices.removeTodo(this.todo.id)
+  }
+
+  public changeStatus(newStatus: { value: TodoStatus; name: string }) {
+    if (this.todo?.id) {
+      this.todosServices.changeTodoStatus(this.todo.id, newStatus.value)
+    }
   }
 }

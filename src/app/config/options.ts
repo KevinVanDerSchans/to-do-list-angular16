@@ -1,4 +1,4 @@
-import { TodoStatus } from "../interfaces/todos.interfaces";
+import { FilterStatus, TodoStatus } from "../interfaces/todos.interfaces";
 import { traductions } from "../utils/traductions";
 
 export const formOptions: { name: string; value: TodoStatus }[] = [
@@ -15,3 +15,8 @@ export const formOptions: { name: string; value: TodoStatus }[] = [
     name: traductions['finished'],
   }
 ]
+
+export const filterOptions: { name: string; value: FilterStatus }[] = [
+  { value: 'all', name: traductions['all'] },
+  ...formOptions,
+];
