@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FilterStatus, Orders, Todo, TodoStatus } from '../interfaces/todos.interfaces';
 import { BehaviorSubject, Observable } from 'rxjs';
+import Swal from "sweetalert2";
 
 @Injectable({
   providedIn: 'root',
@@ -48,11 +49,33 @@ export class TodosService {
   public addTodo(newTodo: Todo) {
     this.todos.push(newTodo);
     this.update();
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      iconColor: 'yellow',
+      color: 'white',
+      background: '#2c2b2b',
+      title: "Task created!",
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
   public removeTodo(todoId: Todo['id']) {
     this.todos = this.todos.filter((todo) => todo.id !== todoId);
     this.update();
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      iconColor: 'yellow',
+      color: 'white',
+      background: '#2c2b2b',
+      title: "Task deleted!",
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
   public changeTodoStatus(todoId: Todo['id'], newStatus: TodoStatus) {
@@ -62,6 +85,17 @@ export class TodosService {
 
     this.todos[todoIndex].status = newStatus;
     this.update();
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      iconColor: 'yellow',
+      color: 'white',
+      background: '#2c2b2b',
+      title: "Task updated!",
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
   private loadFromLocalStorage() {

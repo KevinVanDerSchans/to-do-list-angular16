@@ -42,8 +42,7 @@ https://to-do-list-angular16.vercel.app/
 
 <div>
 
-    ✔️ CREATE a new Task, specifying the DESCRIPTION and the STATUS (Sin empezar, En proceso o Terminadas). 
-    Once created, its DATE, DESCRIPTION, and STATUS will be displayed in the LIST.
+    ✔️ CREATE a new Task with a DESCRIPTION and STATUS (Sin empezar, En proceso o Terminadas). Once created, display its DATE, DESCRIPTION, and STATUS in the LIST.
 
     ✔️ DELETE a task.
 
@@ -66,7 +65,7 @@ https://to-do-list-angular16.vercel.app/
   <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="60" height="60" style="margin-right: 24px" /></a>
   <br>
   <br>
-  <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="sass" width="60" height="60" style="margin-right: 24px" /> </a>
+  <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="sass" width="60" height="60" style="margin-right: 24px" /></a>
   <a href="https://html.spec.whatwg.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="60" height="60" style="margin-right: 24px" /></a>
   <br>
   <br>
