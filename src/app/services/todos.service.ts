@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  FilterStatus,
-  Orders,
-  Todo,
-  TodoStatus,
-} from '../interfaces/todos.interfaces';
+import { FilterStatus, Orders, Todo, TodoStatus } from '../interfaces/todos.interfaces';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -43,8 +38,10 @@ export class TodosService {
     this.todos.sort((a, b) => {
       const dateA = new Date(a.createdAt).getTime();
       const dateB = new Date(b.createdAt).getTime();
+
       return order === 'newest' ? dateB - dateA : dateA - dateB;
     });
+
     this.update();
   }
 
@@ -64,12 +61,12 @@ export class TodosService {
     if (todoIndex === -1) return;
 
     this.todos[todoIndex].status = newStatus;
-
     this.update();
   }
 
   private loadFromLocalStorage() {
     const storedTodos = localStorage.getItem('todos');
+
     if (storedTodos) {
       this.todos = JSON.parse(storedTodos);
     }
