@@ -4,7 +4,7 @@
 
 <p align="center">
   <img
-    src="src/assets/readme/todolist-readme.png"
+    src="src/assets/readme/todolist-angular-readme.png"
     alt="To-do List with Angular16"
     width="850"
   >
