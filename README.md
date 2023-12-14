@@ -42,7 +42,8 @@ https://to-do-list-angular16.vercel.app/
 
 <div>
 
-    ✔️ CREATE a new Task with a DESCRIPTION and STATUS (Sin empezar, En proceso o Terminadas). Once created, display its DATE, DESCRIPTION, and STATUS in the LIST.
+    ✔️ CREATE a new Task with a DESCRIPTION and STATUS (Sin empezar, En proceso o Terminadas). 
+    Once created, display its DATE, DESCRIPTION, and STATUS in the LIST.
 
     ✔️ DELETE a task.
 
@@ -69,7 +70,7 @@ https://to-do-list-angular16.vercel.app/
   <a href="https://html.spec.whatwg.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="60" height="60" style="margin-right: 24px" /></a>
   <br>
   <br>
-  <a href="https://sweetalert2.github.io/" target="_blank" rel="noreferrer"> <img src="src/assets/readme/sweetalert2.png" alt="sweetalert2" width="90" height="60" style="margin-right: 24px" /></a>
+  <a href="https://sweetalert2.github.io/" target="_blank" rel="noreferrer"> <img src="src/assets/readme/sweetalert2.png" alt="sweetalert2" width="95" height="60" style="margin-right: 24px" /></a>
   <a href="https://developer.chrome.com/docs/lighthouse/overview/" target="_blank" rel="noreferrer"> <img src="src/assets/readme/lighthouse.svg" alt="lighthouse" width="60" height="60" style="margin-right: 24px" /></a>
   <a href="https://vercel.com/" target="_blank" rel="noreferrer"> <img src="src/assets/readme/vercel.svg" alt="vercel" width="60" height="60" style="margin-right: 24px" /></a>
 </div>
@@ -132,16 +133,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 If you want to contribute to this project, follow these steps:
 
 1. Perform a fork to the repository.
-<br>
 
 2. Create a branch for your feature or bugfix: `git checkout -b feature/your-feature-name`
-<br>
 
 3. Make the necessary changes and commits:  `git commit -m 'Add some feature'`
-<br>
 
 4. Push to branch: `git push origin feature/your-feature-name`
-<br>
 
 5. Send a pull request to the original repository.
 
