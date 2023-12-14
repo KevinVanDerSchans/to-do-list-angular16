@@ -8,6 +8,12 @@
   gap: 1rem;
   background-color: #ffffff05;
 
+  h2 {
+    font-size: 24px;
+    color: #df5f5f;
+    font-weight: 700;
+  }
+
   .form-group {
     display: flex;
     align-items: center;
@@ -20,26 +26,33 @@
     input {
       padding: .4rem;
       background: transparent;
-      border: none;
-      outline: none;
-      border: 1px solid #29292F;
+      border: 1px solid #555556;
+      border-radius: 4px;
       color: #DADADA;
+    }
+
+    input::placeholder {
+      padding-left: 4px;
     }
   }
 
   button {
     background: transparent;
+    background-color: #e36c6c;
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
     border: none;
-    border: 1px solid #ffffff90;
-    color: #fff;
+    border-radius: 4px;
     height: 100%;
-    padding: 1rem;
+    padding: 0.8rem;
     cursor: pointer;
-    font-weight: 500;
     transition-duration: .3s;
+    font-family: inherit;
 
     &:hover {
-      background-color: #29292F;
+      background-color: #191818d7;
+      color: #fff;
     }
   }
 }
