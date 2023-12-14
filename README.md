@@ -1,5 +1,36 @@
 # To-do List with Angular16
 
+## Kevin van der Schans Delgado
+
+<br>
+
+<p align="center">
+  <img
+    src=""
+    alt="To-do List with Angular16"
+    width="850"
+  >
+</p>
+
+<br>
+
+**DEPLOY**:
+<br>
+https://to-do-list-angular16.vercel.app/
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
 ## Development server
