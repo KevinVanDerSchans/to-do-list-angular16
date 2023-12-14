@@ -1,1 +1,13 @@
-<h1>{{ title }}</h1>
+<div class="container">
+  <h1>To-do List</h1>
+
+  <app-todo-form></app-todo-form>
+
+  <div class="filters">
+    <h2>Filtros</h2>
+    <app-todo-filters></app-todo-filters>
+    <app-todo-orders></app-todo-orders>
+  </div>
+
+  <app-todo-list class="todo-list" [todoList]="todos" />
+</div>
