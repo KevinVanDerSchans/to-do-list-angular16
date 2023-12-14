@@ -56,3 +56,19 @@
     }
   }
 }
+
+@keyframes shine {
+  0% {
+    background-color: #E9AD35 /* Color de fondo inicial */
+  }
+  50% {
+    background-color: #d25a4ab3; /* Cambio de color a un tono más claro a la mitad de la animación */
+  }
+  100% {
+    background-color: #E9AD35; /* Color de fondo final (vuelve al color original) */
+  }
+}
+
+.shine {
+  animation: shine 4s linear infinite; /* Duración y configuración de la animación */
+}
