@@ -5,8 +5,7 @@
         <span>{{ optionSelected.name }}</span>
       </p>
     </ng-container>
-
-    <app-arrow></app-arrow>
+    <app-arrow [open]="open" />
   </div>
 
   <div class="options" *ngIf="open">
@@ -15,13 +14,13 @@
       class="option"
       (click)="selectOption(option)"
     >
-    <span>
-      {{ option.name }}
-    </span>
+      <span>
+        {{ option.name }}
+      </span>
     </div>
   </div>
 </div>
 
 <ng-template #placeholderTemplate>
-  <span class="withOpacity">{{ placeholder }}</span>
+  <span class="withOpacity"> {{ placeholder }} </span>
 </ng-template>

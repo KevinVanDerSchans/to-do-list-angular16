@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ArrowComponent } from './components/dropdown/arrow/arrow.component';
 import { TodoFiltersComponent } from './components/todo-filters/todo-filters.component';
+import { TodoOrdersComponent } from './components/todo-orders/todo-orders.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +21,7 @@ import { TodoFiltersComponent } from './components/todo-filters/todo-filters.com
     DropdownComponent,
     ArrowComponent,
     TodoFiltersComponent,
+    TodoOrdersComponent,
   ],
   imports: [
     BrowserModule,

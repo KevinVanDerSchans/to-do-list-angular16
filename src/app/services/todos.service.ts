@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
-import { FilterStatus, Todo, TodoStatus } from '../interfaces/todos.interfaces';
+import {
+  FilterStatus,
+  Orders,
+  Todo,
+  TodoStatus,
+} from '../interfaces/todos.interfaces';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TodosService {
-
   private todos: Todo[] = [];
   private todosSubject = new BehaviorSubject<Todo[]>(this.todos);
-  public filterSubject = new BehaviorSubject<FilterStatus>('all')
+  public filterSubject = new BehaviorSubject<FilterStatus>('all');
 
   constructor() {
     this.loadFromLocalStorage();
@@ -35,6 +39,15 @@ export class TodosService {
     return this.todosSubject.asObservable();
   }
 
+  public orderByDate(order: Orders) {
+    this.todos.sort((a, b) => {
+      const dateA = new Date(a.createdAt).getTime();
+      const dateB = new Date(b.createdAt).getTime();
+      return order === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+    this.update();
+  }
+
   public addTodo(newTodo: Todo) {
     this.todos.push(newTodo);
     this.update();
@@ -46,17 +59,17 @@ export class TodosService {
   }
 
   public changeTodoStatus(todoId: Todo['id'], newStatus: TodoStatus) {
-    const todoIndex = this.todos.findIndex(todo => todo.id === todoId);
+    const todoIndex = this.todos.findIndex((todo) => todo.id === todoId);
 
     if (todoIndex === -1) return;
 
     this.todos[todoIndex].status = newStatus;
+
     this.update();
   }
 
   private loadFromLocalStorage() {
     const storedTodos = localStorage.getItem('todos');
-
     if (storedTodos) {
       this.todos = JSON.parse(storedTodos);
     }
