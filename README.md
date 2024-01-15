@@ -1,5 +1,7 @@
 # To-do List with Angular16
 
+## Angular 16 / TypeScript
+
 <br>
 
 <p align="center">
@@ -14,9 +16,8 @@
 
 **DEPLOY**:
 <br>
-https://to-do-list-angular16.vercel.app/
+https://to-do-list-angular16.vercel.app
 
-<br>
 <br>
 
 # Index
@@ -35,7 +36,6 @@ https://to-do-list-angular16.vercel.app/
 
 7. [Project developer](#project-developer)
 
-<br>
 <br>
 
 ## Features
